@@ -53,8 +53,8 @@ Traini8 is a comprehensive registry application for government-funded training c
 
 #### Clone the Repository
 ```sh
-git clone https://github.com/yourusername/traini8.git
-cd traini8
+[git clone https://github.com/yourusername/traini8.git](https://github.com/priyanshugour70/Backend_Traini8_Priyanshu_Gour.git)
+cd Backend_Traini8_Priyanshu_Gour
 ```
 
 #### Build the Application
