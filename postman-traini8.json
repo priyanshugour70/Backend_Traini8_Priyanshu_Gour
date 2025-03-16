@@ -1,0 +1,577 @@
+{
+  "info": {
+    "_postman_id": "e4e5a982-f3f5-4d0c-9a5b-c7e6a8bf3a29",
+    "name": "Traini8 API Collection",
+    "description": "Collection for testing the Traini8 Training Center Registry API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Training Centers",
+      "description": "Endpoints for Training Center management",
+      "item": [
+        {
+          "name": "Create Training Center",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"centerName\": \"Tech Skills Academy\",\n  \"address\": {\n    \"detailedAddress\": \"123 Learning Street\",\n    \"city\": \"Bangalore\",\n    \"state\": \"Karnataka\",\n    \"pincode\": \"560001\"\n  },\n  \"studentCapacity\": 150,\n  \"coursesOffered\": [\"Java Programming\", \"Web Development\", \"Data Science\"],\n  \"contactEmail\": \"info@techskills.com\",\n  \"contactPhone\": \"9876543210\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/training-centers",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "training-centers"
+              ]
+            },
+            "description": "Create a new training center"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Training Center - Mumbai",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"centerName\": \"Mumbai Digital Institute\",\n  \"address\": {\n    \"detailedAddress\": \"456 Marine Drive\",\n    \"city\": \"Mumbai\",\n    \"state\": \"Maharashtra\",\n    \"pincode\": \"400002\"\n  },\n  \"studentCapacity\": 200,\n  \"coursesOffered\": [\"Artificial Intelligence\", \"Mobile App Development\", \"Cyber Security\"],\n  \"contactEmail\": \"contact@mdi.edu\",\n  \"contactPhone\": \"9867543210\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/training-centers",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "training-centers"
+              ]
+            },
+            "description": "Create a new training center in Mumbai"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Training Center - Delhi",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"centerName\": \"National Capital Training Center\",\n  \"address\": {\n    \"detailedAddress\": \"789 Connaught Place\",\n    \"city\": \"Delhi\",\n    \"state\": \"Delhi\",\n    \"pincode\": \"110001\"\n  },\n  \"studentCapacity\": 300,\n  \"coursesOffered\": [\"Business Analytics\", \"Digital Marketing\", \"Cloud Computing\", \"Java Programming\"],\n  \"contactEmail\": \"info@nctc.edu\",\n  \"contactPhone\": \"9812345678\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/training-centers",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "training-centers"
+              ]
+            },
+            "description": "Create a new training center in Delhi"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Training Center - Chennai",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"centerName\": \"Southern India Technical School\",\n  \"address\": {\n    \"detailedAddress\": \"42 Anna Salai\",\n    \"city\": \"Chennai\",\n    \"state\": \"Tamil Nadu\",\n    \"pincode\": \"600002\"\n  },\n  \"studentCapacity\": 175,\n  \"coursesOffered\": [\"Mechanical Engineering\", \"Electrical Design\", \"IoT Development\", \"Embedded Systems\"],\n  \"contactEmail\": \"admin@sits.edu\",\n  \"contactPhone\": \"9854321098\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/training-centers",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "training-centers"
+              ]
+            },
+            "description": "Create a new training center in Chennai"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Training Center - Invalid Data",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"centerName\": \"\",\n  \"address\": {\n    \"detailedAddress\": \"123 Learning Street\",\n    \"city\": \"Bangalore\",\n    \"state\": \"\",\n    \"pincode\": \"5600\"\n  },\n  \"studentCapacity\": 0,\n  \"coursesOffered\": [],\n  \"contactEmail\": \"not-an-email\",\n  \"contactPhone\": \"123456\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/training-centers",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "training-centers"
+              ]
+            },
+            "description": "Create a new training center with invalid data to test validation"
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Training Centers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/training-centers?page=0&size=10&sort=centerName,asc",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "training-centers"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                },
+                {
+                  "key": "sort",
+                  "value": "centerName,asc"
+                }
+              ]
+            },
+            "description": "Get all training centers with pagination"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Training Center by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/training-centers/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "training-centers",
+                "1"
+              ]
+            },
+            "description": "Get a training center by its ID"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Training Center by Code",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/training-centers/code/{{centerCode}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "training-centers",
+                "code",
+                "{{centerCode}}"
+              ]
+            },
+            "description": "Get a training center by its unique code"
+          },
+          "response": []
+        },
+        {
+          "name": "Search Training Centers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/training-centers/search?keyword=tech&page=0&size=10",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "training-centers",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "keyword",
+                  "value": "tech"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "Search for training centers using a keyword"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Training Centers by City",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/training-centers/city/Delhi?page=0&size=10",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "training-centers",
+                "city",
+                "Delhi"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "Get training centers filtered by city"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Training Centers by Course",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/training-centers/course/Java?page=0&size=10",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "training-centers",
+                "course",
+                "Java"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "Get training centers offering a specific course"
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Training Centers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/training-centers/filter?city=Bangalore&minCapacity=100&course=Java&active=true&page=0&size=10",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "training-centers",
+                "filter"
+              ],
+              "query": [
+                {
+                  "key": "city",
+                  "value": "Bangalore"
+                },
+                {
+                  "key": "minCapacity",
+                  "value": "100"
+                },
+                {
+                  "key": "course",
+                  "value": "Java"
+                },
+                {
+                  "key": "active",
+                  "value": "true"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "Filter training centers using multiple criteria"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Training Center",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"centerName\": \"Updated Tech Skills Academy\",\n  \"address\": {\n    \"detailedAddress\": \"123 Learning Avenue\",\n    \"city\": \"Bangalore\",\n    \"state\": \"Karnataka\",\n    \"pincode\": \"560001\"\n  },\n  \"studentCapacity\": 180,\n  \"coursesOffered\": [\"Java Programming\", \"Web Development\", \"Data Science\", \"AI & Machine Learning\"],\n  \"contactEmail\": \"info@techskills.com\",\n  \"contactPhone\": \"9876543210\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/training-centers/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "training-centers",
+                "1"
+              ]
+            },
+            "description": "Update an existing training center"
+          },
+          "response": []
+        },
+        {
+          "name": "Deactivate Training Center",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/training-centers/2/deactivate",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "training-centers",
+                "2",
+                "deactivate"
+              ]
+            },
+            "description": "Deactivate a training center"
+          },
+          "response": []
+        },
+        {
+          "name": "Activate Training Center",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/training-centers/2/activate",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "training-centers",
+                "2",
+                "activate"
+              ]
+            },
+            "description": "Activate a training center"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Training Center",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/training-centers/3",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "training-centers",
+                "3"
+              ]
+            },
+            "description": "Delete a training center"
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Offered Courses",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/training-centers/courses",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "training-centers",
+                "courses"
+              ]
+            },
+            "description": "Get a list of all courses offered across all centers"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "System Management",
+      "description": "System-level endpoints",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/actuator/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "actuator",
+                "health"
+              ]
+            },
+            "description": "Check the application health status"
+          },
+          "response": []
+        },
+        {
+          "name": "Metrics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/actuator/metrics",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "actuator",
+                "metrics"
+              ]
+            },
+            "description": "Get application metrics"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "centerCode",
+      "value": "TC-A7B3C9",
+      "type": "string",
+      "description": "Replace with an actual center code after creating centers"
+    }
+  ]
+}
